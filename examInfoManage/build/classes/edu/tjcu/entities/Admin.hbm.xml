@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-5-10 21:17:39 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="edu.tjcu.entities.Admin" table="ADMIN">
+        <id name="adminId" type="java.lang.Integer">
+            <column name="ADMINID" />
+            <generator class="native" />
+        </id>
+        <property name="accNum" type="java.lang.String">
+            <column name="ACCNUM" />
+        </property>
+        <property name="password" type="java.lang.String">
+            <column name="PASSWORD" />
+        </property>
+    </class>
+</hibernate-mapping>

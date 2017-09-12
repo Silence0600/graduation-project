@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<!-- 将类配置成bean的配置文件 -->
+	<bean id="checkUserDao" class="edu.tjcu.dao.CheckUserDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="checkUserService" class="edu.tjcu.service.CheckUserService">
+		<property name="checkUserDao" ref="checkUserDao"></property>
+	</bean>
+
+	<bean id="loginAction" class="edu.tjcu.action.LoginAction" scope="prototype">
+		<property name="checkUserService" ref="checkUserService"></property>
+	</bean>
+
+	<!-- 成绩录入bean -->
+	<bean id="gradeInputAcion" class="edu.tjcu.action.GradeInput"
+		scope="prototype">
+		<property name="gradeInputService" ref="gradeInputService"></property>
+	</bean>
+	<bean id="gradeInputService" class="edu.tjcu.service.GradeInputService">
+		<property name="gradeInputDao" ref="gradeInputDao"></property>
+	</bean>
+	
+	<bean id="gradeInputDao" class="edu.tjcu.dao.GradeInputDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+<!-- 考场管理的bean配置 -->
+<bean id="examRoomManageAcion" class="edu.tjcu.action.ExamRoomManage"
+		scope="prototype">
+		<property name="examRoomManageService" ref="examRoomManageService"></property>
+	</bean>
+	
+	<bean id="examRoomManageService" class="edu.tjcu.service.ExamRoomManageService">
+		<property name="examRoomManageDao" ref="examRoomManageDao"></property>
+	</bean>
+	
+	<bean id="examRoomManageDao" class="edu.tjcu.dao.ExamRoomManageDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+<!--配置userManage  -->
+	<bean id="userManageAcion" class="edu.tjcu.action.UserManageAcion"
+		scope="prototype">
+		<property name="userManageService" ref="userManageService"></property>
+	</bean>
+
+	<bean id="userManageService" class="edu.tjcu.service.UserManageService">
+		<property name="userManageDao" ref="userManageDao"></property>
+	</bean>
+	
+	<bean id="userManageDao" class="edu.tjcu.dao.UserManageDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+<!--配置安排考场的bean  -->
+	<bean id="arrangeExamRoomAcion" class="edu.tjcu.action.ArrangeExamRoomAction"
+		scope="prototype">
+		<property name="arrangeExamRoomService" ref="arrangeExamRoomService"></property>
+	</bean>
+	
+	<bean id="arrangeExamRoomService" class="edu.tjcu.service.ArrangeExamRoomService">
+		<property name="arrangeExamRoomDao" ref="arrangeExamRoomDao"></property>
+	</bean>
+	
+	<bean id="arrangeExamRoomDao" class="edu.tjcu.dao.ArrangeExamRoomDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<!--配置学生查询的配置  -->
+	<bean id="queryTpAndGAction" class="edu.tjcu.action.QueryTpAndGAction"
+		scope="prototype">
+		<property name="queryTpAndGService" ref="queryTpAndGService"></property>
+	</bean>
+	
+	<bean id="queryTpAndGService" class="edu.tjcu.service.QueryTpAndGService">
+		<property name="queryTpAndGDao" ref="queryTpAndGDao"></property>
+	</bean>
+	
+	<bean id="queryTpAndGDao" class="edu.tjcu.dao.QueryTpAndGDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<!--管理老师信息  -->
+	<bean id="teacherManageAction" class="edu.tjcu.action.TeacherManageAction"
+		scope="prototype">
+		<property name="teacherManageService" ref="teacherManageService"></property>
+	</bean>
+	
+	<bean id="teacherManageService" class="edu.tjcu.service.TeacherManageService">
+		<property name="teacherManageDao" ref="teacherManageDao"></property>
+	</bean>
+	
+	<bean id="teacherManageDao" class="edu.tjcu.dao.TeacherManageDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<!--管理学生的bean  -->
+	<bean id="studentManageAction" class="edu.tjcu.action.StudentManageAction"
+		scope="prototype">
+		<property name="studentManageService" ref="studentManageService"></property>
+	</bean>
+	
+	<bean id="studentManageService" class="edu.tjcu.service.StudentManageService">
+		<property name="studentManageDao" ref="studentManageDao"></property>
+	</bean>
+	
+	<bean id="studentManageDao" class="edu.tjcu.dao.StudentManageDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+</beans>

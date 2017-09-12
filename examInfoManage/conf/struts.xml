@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="true" />
+
+	<package name="default" namespace="/" extends="struts-default,json-default">
+
+
+		<action name="login" class="loginAction">
+			<result name="teacher" type="redirect">/teacher/index.jsp</result>
+			<result name="admin" type="redirect">/admin/index.jsp</result>
+			<result name="student" type="redirect">/student/index.jsp</result>
+			<result name="error" type="redirect">/login.jsp</result>
+		</action>
+
+
+		<action name="userManage_*" class="userManageAcion" method="{1}">
+			<result name="queryAllUserSuc">/admin/userManage.jsp</result>
+		</action>
+		<action name="gradeInput_*" class="gradeInputAcion" method="{1}">
+			<result name="okokok">
+				/teacher/gradeInput.jsp
+			</result>		
+			<result type="json">
+                <param name="root">result</param>
+            </result>          
+		</action>
+		<action name="examRoom_*" class="examRoomManageAcion" method="{1}">
+			<result name="queryAllSuccess">
+				/admin/examRoomManage.jsp
+			</result>
+			<result name="changeToAddPageSuc">
+				/admin/addExamRoom.jsp
+			</result>	
+			<result name="deleteSuccess">
+				/admin/examRoomManage.jsp
+			</result>	
+			<result name="changeSuccess">
+				/admin/addExamRoom.jsp
+			</result>
+			<result name="changeUpdateSuccess">
+				/admin/updateExamRoom.jsp
+			</result>
+			<result name="updateSuccess">
+				/admin/updateExamRoom.jsp
+			</result>
+			<result name = "insertExcelSuc" type="redirect">
+				/admin/index.jsp
+			</result>
+			<result name="excel" type="stream">
+			    <param name="contentType">application/vnd.ms-excel</param>
+			    <param name="contentDisposition">attachment;filename="examRoom.xls"</param>
+			    <param name="inputName">excelFile</param>
+			</result>
+			<result type="json">
+                <param name="root">examRoomJson</param>
+            </result>  	     
+		</action>
+	</package>
+	
+	<package name="arrangeExamRoom" namespace="/" extends="struts-default,json-default">
+        <action name="arrangeExamRoom_*" class="arrangeExamRoomAcion" method="{1}">
+        	<result name="changeSuccess">
+        		/teacher/ArrangeExamRoom.jsp
+        	</result>
+        	<result type="json">
+                <param name="root">result</param>
+            </result>  
+        </action>
+    </package>
+    
+    <package name="queryTpAndG" namespace="/" extends="struts-default,json-default">
+        <action name="queryTpAndG_*" class="queryTpAndGAction" method="{1}">
+        	<result name="success">
+        		/student/queryTp.jsp
+        	</result>
+        	<result name="changeTpSuccess">
+        		/student/TestProcess.jsp
+        	</result>
+        	<result name ="changeGradeSuccess">
+        		/student/gradeList.jsp
+        	</result>
+        	<result name="changeTeacherTPSuccess">
+        		/teacher/TestProccess.jsp
+        	</result>
+        </action>
+    </package>
+    <!--管理老师信息  -->
+     <package name="teacherManage" namespace="/" extends="struts-default,json-default">
+        <action name="teacherManage_*" class="teacherManageAction" method="{1}">
+        	<result name="queryAllTeacherSuc">
+        		/admin/teacherManage.jsp
+        	</result>
+        	<result name="changeToAddPage">
+        		/admin/addTeacher.jsp
+        	</result>
+        	<result name="changeToTpdatePageSuc">
+        		/admin/updateTeacher.jsp
+        	</result>
+        	<result name="deleteTeacherSuc">
+     			/admin/teacherManage.jsp
+        	</result>
+        	<result type="json">
+                <param name="root">teacherJsonString</param>
+            </result>  	
+        </action>
+    </package>
+    
+    <!--管理学生信息  -->
+     <package name="studentManage" namespace="/" extends="struts-default,json-default">
+        <action name="studentManage_*" class="studentManageAction" method="{1}">
+        	<result name="queryAllStudent">
+        		/admin/studentManage.jsp
+        	</result>
+        	<result name="changeToAddPageSuc">
+        		/admin/addStudent.jsp
+        	</result>
+        	<result name="deletestudentSuc">
+        		/admin/studentManage.jsp
+        	</result>
+        	<result name="changesuc">
+        		/admin/updateStudent.jsp
+        	</result>
+        	<result type="json">
+                <param name="root">studentJsonString</param>
+            </result>  	
+        </action>
+    </package>
+
+
+	<!-- 定义新的拦截器栈, 配置 prepare 拦截器栈的 alwaysInvokePrepare 参数值为 false -->
+	<!-- <interceptors> <interceptor-stack name="sshStack"> <interceptor-ref 
+		name="paramsPrepareParamsStack"> <param name="prepare.alwaysInvokePrepare">false</param> 
+		</interceptor-ref> </interceptor-stack> </interceptors> -->
+
+	<!-- 使用新的拦截器栈 -->
+	<!-- <default-interceptor-ref name="sshStack"></default-interceptor-ref> -->
+
+</struts>

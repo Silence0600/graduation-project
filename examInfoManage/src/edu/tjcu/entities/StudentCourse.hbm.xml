@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-3-5 13:38:01 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="edu.tjcu.entities.StudentCourse" table="STUDENTCOURSE">
+        <id name="studentCourseId" type="java.lang.Integer">
+            <column name="STUDENTCOURSEID" />
+            <generator class="native" />
+        </id>
+        <property name="courseId" type="java.lang.Integer">
+            <column name="COURSEID" />
+        </property>
+        <property name="studentId" type="java.lang.Integer">
+            <column name="STUDENTID" />
+        </property>
+    </class>
+</hibernate-mapping>

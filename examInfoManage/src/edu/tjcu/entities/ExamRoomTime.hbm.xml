@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-3-7 21:29:44 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="edu.tjcu.entities.ExamRoomTime" table="EXAMROOMTIME">
+        <id name="examRoomTimeId" type="java.lang.Integer">
+            <column name="EXAMROOMTIMEID" />
+            <generator class="native" />
+        </id>
+        <property name="examRoomId" type="java.lang.Integer">
+            <column name="EXAMROOMID" />
+        </property>
+        <property name="teacherId" type="java.lang.Integer">
+            <column name="TEACHERID" />
+        </property>
+        <property name="courseId" type="java.lang.Integer">
+            <column name="COURSEID" />
+        </property>
+        <property name="examTime" type="java.util.Date">
+            <column name="EXAMTIME" />
+        </property>
+         <property name="invigilator" type="java.lang.String">
+            <column name="INVIGILATOR" />
+        </property>
+        <property name="status" type="java.lang.String">
+            <column name="STATUS" />
+        </property>
+    </class>
+</hibernate-mapping>

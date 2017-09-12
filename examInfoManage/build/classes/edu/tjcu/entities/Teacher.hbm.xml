@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-5-10 21:12:32 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="edu.tjcu.entities.Teacher" table="TEACHER">
+        <id name="teacherId" type="java.lang.Integer">
+            <column name="TEACHERID" />
+            <generator class="native" />
+        </id>
+        <property name="teacherNum" type="java.lang.Integer">
+            <column name="TEACHERNUM" />
+        </property>
+        <property name="teacherName" type="java.lang.String">
+            <column name="TEACHERNAME" />
+        </property>
+        <property name="age" type="java.lang.Integer">
+            <column name="AGE" />
+        </property>
+        <property name="sex" type="java.lang.String">
+            <column name="SEX" />
+        </property>
+        <property name="password" type="java.lang.String">
+            <column name="PASSWORD" />
+        </property>
+    </class>
+</hibernate-mapping>

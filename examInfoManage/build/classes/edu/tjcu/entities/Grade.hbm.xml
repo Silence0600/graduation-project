@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-3-5 13:38:01 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="edu.tjcu.entities.Grade" table="GRADE">
+        <id name="gradeId" type="java.lang.Integer" access="field">
+            <column name="GRADEID" />
+            <generator class="native" />
+        </id>
+        <property name="courseId" type="java.lang.Integer" access="field">
+            <column name="COURSEID" />
+        </property>
+        <property name="teacherId" type="java.lang.Integer" access="field">
+            <column name="TEACHERID" />
+        </property>
+        <property name="studentId" type="java.lang.Integer" access="field">
+            <column name="STUDENTID" />
+        </property>
+        <property name="peacetimeGrade" type="java.lang.Integer" access="field">
+            <column name="PEACETIMEGRADE" />
+        </property>
+        <property name="finalGrade" type="java.lang.Integer" access="field">
+            <column name="FINALGRADE" />
+        </property>
+        <property name="totalGrade" type="java.lang.Integer" access="field">
+            <column name="TOTALGRADE" />
+        </property>
+    </class>
+</hibernate-mapping>

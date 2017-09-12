@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>考试信息管理系统</title>
+<link rel="stylesheet" href="css/pintuer.css">
+<script src="js/jquery.js"></script>
+<script src="js/pintuer.js"></script>
+<script src="js/respond.js"></script>
+<style>
+.demo-nav.fixed.fixed-top {
+	z-index: 8;
+	background: #fff;
+	width: 100%;
+	padding: 0;
+	border-bottom: solid 3px #0a8;
+	-webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, .175);
+	box-shadow: 0 3px 6px rgba(0, 0, 0, .175);
+}
+</style>
+</head>
+
+<body>
+	<!--顶部-->
+	<div class="layout bg-black bg-inverse">
+		<div class="container height-large">
+			<span></span> 欢迎访问考试信息管理系统
+		</div>
+	</div>
+	<div class="demo-nav padding-big-top padding-big-bottom fixed"
+		style="background-color: aliceblue;">
+		<div class="container padding-top padding-bottom">
+			<div class="line">
+				<div class="xl12 xs3 xm3 xb2">
+					<button class="button icon-navicon float-right"
+						data-target="#header-demo"></button>
+					<a href="exam.html"><img
+						src="images/logo.png" style="width: 150px;" /></a>
+				</div>
+				<div class=" xl12 xs9 xm9 xb10 nav-navicon" id="header-demo">
+					<div class="xs8 xm6 xb5 padding-small" style="width: 710px;">
+						<ul class="nav nav-menu nav-inline nav-big">
+							<li><a href="exam.html">首页</a></li>
+							<li><a href="login.jsp?key=kcap">考程安排</a></li>
+							<li><a href="login.jsp?key=kccx">考程查询</a></li>
+							<li><a href="login.jsp?key=cjlr">成绩录入</a></li>
+							<li><a href="login.jsp?key=cjcx">成绩查询</a></li>
+							<li><a href="#">系统管理<span class="arrow"></span></a>
+								<ul class="drop-menu">
+									<li><a href="login.jsp?key=kcgl">考场信息管理</a></li>
+									<li><a href="login.jsp?key=jsgl">教师信息管理</a></li>
+									<li><a href="login.jsp?key=xsgl">学生信息管理</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--banner-->
+	<div class="banner" data-style="border-white">
+		<div class="carousel">
+			<div class="item">
+				<img src="images/banner1.jpg" width="100%" />
+			</div>
+			 <div class="item">
+				<img src="images/banner4.jpg" width="100%" />
+			</div>			
+		</div>
+	</div>
+	<br />
+	<div class="line-big">			
+	<div class="xs6">
+		<ul class="list-unstyle height-big padding-top" style="margin-left: 100px;width: 500px;">
+			<li><span class="badge bg-red">公告</span> <a
+				href="#">数据结构成绩已发布</a></li>
+			<li><span class="badge bg-main">公告</span> <a
+				href="#">软件工程成绩已发布</a></li>
+			<li><span class="badge bg-main">新闻</span> <a
+				href="#">考场安排已发布</a></li>
+			<li><span class="badge bg-main">新闻</span> <a
+				href="#">高等数学成绩已发布</a></li>
+			<li><span class="badge bg-main">新闻</span> <a
+				href="#">数据结构成绩已发布</a></li>
+		</ul>
+	</div>	
+	<div class="xs6">
+		<ul class="list-unstyle height-big padding-top">
+			<li><span class="badge bg-yellow">新闻</span> <a
+				href="#">数据结构成绩已发布</a></li>
+			<li><span class="badge bg-sub">新闻</span> <a
+				href="#">数据结构成绩已发布</a></li>
+			<li><span class="badge bg-sub">新闻</span> <a
+				href="#">数据结构成绩已发布</a></li>
+			<li><span class="badge bg-main">新闻</span> <a
+				href="#">数据结构成绩已发布</a></li>
+			<li><span class="badge bg-sub">新闻</span> <a
+				href="#">数据结构成绩已发布</a></li>
+		</ul>
+	</div>
+	</div>
+	<div class="layout bg-black bg-inverse">
+		<div class="container">
+			<div class="navbar">
+				<div class="navbar-head">
+					<button class="button bg-gray icon-navicon"
+						data-target="#navbar-footer"></button>
+				</div>
+				<div class="navbar-body nav-navicon" id="navbar-footer">
+					<div class="navbar-text navbar-left hidden-s hidden-l">
+						Copyright © 2017 天津商业大学 Tianjin University of Commerce All Rights
+						Reserved.</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
